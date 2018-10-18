@@ -30,13 +30,13 @@ $results = mysqli_query($con, $query) or die(mysqli_error($con));
 // Update the inventory:
 $query = "UPDATE inventory SET QtyOnHand = ";
 $query .= "(QtyOnHand - $q1) WHERE prodid = '$product1'";
-$results = mysqli_query($con, $query) or die(mysql_error($con));
+$results = mysqli_query($con, $query) or die(mysqli_error($con));
 $query = "UPDATE inventory SET QtyOnHand = ";
 $query .= "(QtyOnHand - $q2) WHERE prodid = '$product2'";
-$results = mysqli_query($con, $query) or die(mysql_error($con));
+$results = mysqli_query($con, $query) or die(mysqli_error($con));
 $query = "UPDATE inventory SET QtyOnHand = ";
 $query .= "(QtyOnHand - $q3) WHERE prodid = '$product3'";
-$results = mysqli_query($con, $query) or die(mysql_error($con));
+$results = mysqli_query($con, $query) or die(mysqli_error($con));
 
 $message2 = "Inventory Quantities Updated.";
 
