@@ -3,19 +3,15 @@ session_start();
 ob_start();
 //connect to the database
 include "conn_inc.php";
-
 $query = "SELECT * FROM ordertbl";
 $results = mysqli_query($con, $query)
   or die(mysqli_error($con));
-
-
 echo "<html>";
 echo "<head>";
 echo "<title>The PHP Store</title>";
 echo "</head>";
 echo "<body>";
 echo "<h2>PHP Store Orders</h2>";
-
 $tbl_head =<<<TBL
 <table width="500" align="center" border="1">
   <tr>
@@ -26,11 +22,8 @@ $tbl_head =<<<TBL
     <th width="20%">Quantity 3</th>
   </tr>
 TBL;
-
 echo $tbl_head;
-
 $numbr = 1;
-
 while ($row = mysqli_fetch_array($results)) {
   extract($row);
     if ($numbr%2==0) {
@@ -50,12 +43,12 @@ while ($row = mysqli_fetch_array($results)) {
   echo $qty3;
   echo "</td></tr>";
   $numbr += 1;
-
 }
+
+echo "</table>";
+echo "<br /><br />";
+echo "<hr />";
+echo "<center><a href='index.php'>Main Page</a></center>";
+echo "</body>";
+echo "</html>";
 ?>
-</table>
-<br /><br />
-<hr />
-<center><a href="index.php">Main Page</a></center>
-</body>
-</html>
